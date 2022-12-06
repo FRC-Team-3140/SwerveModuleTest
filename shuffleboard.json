@@ -88,17 +88,6 @@
               "_title": "TestDriveMotor"
             }
           },
-          "4,2": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Text View",
-              "_source0": "network_table:///LiveWindow/SwerveModule/cancoder_abs_position",
-              "_title": "LiveWindow/SwerveModule/cancoder_abs_position"
-            }
-          },
           "5,2": {
             "size": [
               1,
@@ -119,6 +108,81 @@
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/SwerveModule/drive_value",
               "_title": "LiveWindow/SwerveModule/drive_value"
+            }
+          },
+          "6,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///LiveWindow/SwerveModule/drive_velocity",
+              "_title": "LiveWindow/SwerveModule/drive_velocity",
+              "Range/Min": -1.0,
+              "Range/Max": 1.0,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 5,
+              "Visuals/Show text": true
+            }
+          },
+          "4,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///LiveWindow/SwerveModule/cancoder_velocity",
+              "_title": "LiveWindow/SwerveModule/cancoder_velocity",
+              "Range/Min": -1.0,
+              "Range/Max": 1.0,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 5,
+              "Visuals/Show text": true
+            }
+          },
+          "4,2": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///LiveWindow/SwerveModule/cancoder_abs_position",
+              "_title": "LiveWindow/SwerveModule/cancoder_abs_position",
+              "Range/Min": -1.0,
+              "Range/Max": 1.0,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 5,
+              "Visuals/Show text": true
+            }
+          },
+          "5,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Number Bar",
+              "_source0": "network_table:///LiveWindow/SwerveModule/turn_velocity",
+              "_title": "LiveWindow/SwerveModule/turn_velocity",
+              "Range/Min": -1.0,
+              "Range/Max": 1.0,
+              "Range/Center": 0.0,
+              "Visuals/Num tick marks": 5,
+              "Visuals/Show text": true
+            }
+          },
+          "0,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Command",
+              "_source0": "network_table:///SmartDashboard/TestBothMotors",
+              "_title": "TestBothMotors"
             }
           }
         }
@@ -286,7 +350,7 @@
                 {
                   "_type": "3-Axis Accelerometer",
                   "_source0": "network_table:///LiveWindow/Ungrouped/BuiltInAccel[0]",
-                  "_title": "LiveWindow/Ungrouped/BuiltInAccel[0]",
+                  "_title": "BuiltInAccel[0]",
                   "Accelerometer/Range": "k16G",
                   "Visuals/Show value": true,
                   "Visuals/Precision": 2,
@@ -295,7 +359,7 @@
                 {
                   "_type": "Voltage View",
                   "_source0": "network_table:///LiveWindow/Ungrouped/AnalogInput[1]",
-                  "_title": "LiveWindow/Ungrouped/AnalogInput[1]",
+                  "_title": "AnalogInput[1]",
                   "Range/Min": 0.0,
                   "Range/Max": 5.0,
                   "Range/Center": 0.0,
@@ -305,34 +369,34 @@
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[9]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[9]"
+                  "_title": "PIDController[9]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[15]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[15]"
+                  "_title": "PIDController[15]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[27]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[27]"
+                  "_title": "PIDController[27]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[12]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[12]"
+                  "_title": "PIDController[12]"
                 },
                 {
                   "_type": "Boolean Box",
                   "_source0": "network_table:///LiveWindow/Ungrouped/DigitalInput[0]/Value",
-                  "_title": "LiveWindow/Ungrouped/DigitalInput[0]/Value",
+                  "_title": "DigitalInput[0]/Value",
                   "Colors/Color when true": "#7CFC00FF",
                   "Colors/Color when false": "#8B0000FF"
                 },
                 {
                   "_type": "Voltage View",
                   "_source0": "network_table:///LiveWindow/Ungrouped/AnalogInput[0]",
-                  "_title": "LiveWindow/Ungrouped/AnalogInput[0]",
+                  "_title": "AnalogInput[0]",
                   "Range/Min": 0.0,
                   "Range/Max": 5.0,
                   "Range/Center": 0.0,
@@ -342,7 +406,7 @@
                 {
                   "_type": "Differential Drivebase",
                   "_source0": "network_table:///LiveWindow/Ungrouped/DifferentialDrive[1]",
-                  "_title": "LiveWindow/Ungrouped/DifferentialDrive[1]",
+                  "_title": "DifferentialDrive[1]",
                   "Wheels/Number of wheels": 4,
                   "Wheels/Wheel diameter": 80.0,
                   "Visuals/Show velocity vectors": true
@@ -350,96 +414,96 @@
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[16]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[16]"
+                  "_title": "PIDController[16]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[21]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[21]"
+                  "_title": "PIDController[21]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[24]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[24]"
+                  "_title": "PIDController[24]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[11]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[11]"
+                  "_title": "PIDController[11]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[25]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[25]"
+                  "_title": "PIDController[25]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[13]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[13]"
+                  "_title": "PIDController[13]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[17]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[17]"
+                  "_title": "PIDController[17]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[20]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[20]"
+                  "_title": "PIDController[20]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[14]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[14]"
+                  "_title": "PIDController[14]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[22]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[22]"
+                  "_title": "PIDController[22]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[26]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[26]"
+                  "_title": "PIDController[26]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[23]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[23]"
+                  "_title": "PIDController[23]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[18]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[18]"
+                  "_title": "PIDController[18]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[19]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[19]"
+                  "_title": "PIDController[19]"
                 },
                 {
                   "_type": "PID Controller",
                   "_source0": "network_table:///LiveWindow/Ungrouped/PIDController[10]",
-                  "_title": "LiveWindow/Ungrouped/PIDController[10]"
+                  "_title": "PIDController[10]"
                 },
                 {
                   "_type": "Boolean Box",
                   "_source0": "network_table:///LiveWindow/Ungrouped/DigitalInput[1]/Value",
-                  "_title": "LiveWindow/Ungrouped/DigitalInput[1]/Value",
+                  "_title": "DigitalInput[1]/Value",
                   "Colors/Color when true": "#7CFC00FF",
                   "Colors/Color when false": "#8B0000FF"
                 },
                 {
                   "_type": "Boolean Box",
                   "_source0": "network_table:///LiveWindow/Ungrouped/DigitalOutput[3]/Value",
-                  "_title": "LiveWindow/Ungrouped/DigitalOutput[3]/Value",
+                  "_title": "DigitalOutput[3]/Value",
                   "Colors/Color when true": "#7CFC00FF",
                   "Colors/Color when false": "#8B0000FF"
                 },
                 {
                   "_type": "Boolean Box",
                   "_source0": "network_table:///LiveWindow/Ungrouped/DigitalInput[2]/Value",
-                  "_title": "LiveWindow/Ungrouped/DigitalInput[2]/Value",
+                  "_title": "DigitalInput[2]/Value",
                   "Colors/Color when true": "#7CFC00FF",
                   "Colors/Color when false": "#8B0000FF"
                 }
@@ -915,6 +979,43 @@
               "Range/Center": 0.0,
               "Visuals/Num tick marks": 5,
               "Visuals/Show text": true
+            }
+          },
+          "6,4": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Slider",
+              "_source0": "network_table:///SmartDashboard/SwerveModule/turnAngle",
+              "_title": "SmartDashboard/SwerveModule/turnAngle",
+              "Slider Settings/Min": -0.0,
+              "Slider Settings/Max": 360.0,
+              "Slider Settings/Block increment": 2.0,
+              "Visuals/Display value": true
+            }
+          },
+          "8,0": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Toggle Switch",
+              "_source0": "network_table:///LiveWindow/SwerveModule/activated",
+              "_title": "LiveWindow/SwerveModule/activated"
+            }
+          },
+          "8,1": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///LiveWindow/SwerveModule/activated",
+              "_title": "LiveWindow/SwerveModule/activated"
             }
           }
         }
