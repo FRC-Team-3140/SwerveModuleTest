@@ -55,7 +55,7 @@ public class SwerveModule extends SubsystemBase {
 
     private double gearRatio = 1.0;
 
-    final private double base_angle;
+    private double base_angle;
 
     private double maxTurnSpeed = 0.3;
     private double maxDriveSpeed = 0.2;
@@ -110,7 +110,7 @@ public class SwerveModule extends SubsystemBase {
 
         swerve_table.getEntry("module_id").setString(module_id);
         turn_setpoint = swerve_table.getEntry("turn_setpoint");
-        turn_setpoint.setDouble(base_angle);
+        turn_setpoint.setDouble(0.0);
         drive_setpoint = swerve_table.getEntry("drive_setpoint");
         drive_setpoint.setDouble(0.0);
         turn_angle = swerve_table.getEntry("turn_angle");
@@ -127,6 +127,8 @@ public class SwerveModule extends SubsystemBase {
         turn_angle.setDouble(ang);
 
         double ts = turn_setpoint.getDouble(0.0);
+
+        ts = computeAdjustedAngle(ts);
         
         angle_pid.setSetpoint(ts);    
         turnVel = angle_pid.calculate(getCancoderAbsPosition());
@@ -136,6 +138,17 @@ public class SwerveModule extends SubsystemBase {
         setDriveSpeed(ds);
 
         //System.out.printf("SW Periodic: %.2f %.2f %.2f\n",getCancoderAbsPosition(),angle_pid.getSetpoint(),turnVel);
+    }
+
+    //public void addToHomeAngle(double angle){
+    //    base_angle += angle;
+    //}
+
+
+    private double computeAdjustedAngle(double angle){ 
+        double out_angle =  base_angle+angle;
+        out_angle = 360.0*((out_angle/360.0) - Math.floor(out_angle/360.0));
+        return out_angle;
     }
 
     @Override

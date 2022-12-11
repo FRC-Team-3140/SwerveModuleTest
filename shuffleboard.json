@@ -41,22 +41,6 @@
               "Visuals/Display value": true
             }
           },
-          "0,0": {
-            "size": [
-              1,
-              1
-            ],
-            "content": {
-              "_type": "Number Bar",
-              "_source0": "network_table:///swerve_chassis/module_fr/drive_setpoint",
-              "_title": "swerve_chassis/module_fr/drive_setpoint",
-              "Range/Min": -1.0,
-              "Range/Max": 1.0,
-              "Range/Center": 0.0,
-              "Visuals/Num tick marks": 5,
-              "Visuals/Show text": true
-            }
-          },
           "7,0": {
             "size": [
               2,
@@ -87,22 +71,7 @@
               "Visuals/Display value": true
             }
           },
-          "1,1": {
-            "size": [
-              2,
-              1
-            ],
-            "content": {
-              "_type": "Number Slider",
-              "_source0": "network_table:///swerve_chassis/module_br/drive_setpoint",
-              "_title": "swerve_chassis/module_br/drive_setpoint",
-              "Slider Settings/Min": -0.2,
-              "Slider Settings/Max": 0.2,
-              "Slider Settings/Block increment": 0.0625,
-              "Visuals/Display value": true
-            }
-          },
-          "3,1": {
+          "7,1": {
             "size": [
               2,
               1
@@ -124,25 +93,40 @@
             ],
             "content": {
               "_type": "Number Slider",
-              "_source0": "network_table:///swerve_chassis/module_br/turn_setpoint",
-              "_title": "swerve_chassis/module_br/turn_setpoint",
-              "Slider Settings/Min": 0.0,
-              "Slider Settings/Max": 360.0,
+              "_source0": "network_table:///swerve_chassis/module_br/drive_setpoint",
+              "_title": "swerve_chassis/module_br/drive_setpoint",
+              "Slider Settings/Min": -0.2,
+              "Slider Settings/Max": 0.2,
               "Slider Settings/Block increment": 0.0625,
               "Visuals/Display value": true
             }
           },
-          "7,1": {
+          "1,1": {
             "size": [
               2,
               1
             ],
             "content": {
               "_type": "Number Slider",
-              "_source0": "network_table:///swerve_chassis/module_br/drive_setpoint",
-              "_title": "swerve_chassis/module_br/drive_setpoint",
+              "_source0": "network_table:///swerve_chassis/module_bl/drive_setpoint",
+              "_title": "swerve_chassis/module_bl/drive_setpoint",
               "Slider Settings/Min": -0.2,
               "Slider Settings/Max": 0.2,
+              "Slider Settings/Block increment": 0.0625,
+              "Visuals/Display value": true
+            }
+          },
+          "3,1": {
+            "size": [
+              2,
+              1
+            ],
+            "content": {
+              "_type": "Number Slider",
+              "_source0": "network_table:///swerve_chassis/module_bl/turn_setpoint",
+              "_title": "swerve_chassis/module_bl/turn_setpoint",
+              "Slider Settings/Min": 0.0,
+              "Slider Settings/Max": 360.0,
               "Slider Settings/Block increment": 0.0625,
               "Visuals/Display value": true
             }

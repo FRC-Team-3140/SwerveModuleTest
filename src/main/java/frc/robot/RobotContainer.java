@@ -38,10 +38,15 @@ public class RobotContainer {
 // The robot's subsystems
     public final PowerManagment m_powerManagment = new PowerManagment();
 
-    public final SwerveModule m_swerveModule_fr = new SwerveModule("fr",10,1,2,298.0);
-    public final SwerveModule m_swerveModule_fl = new SwerveModule("fl",11,3,4,0.0);
-    public final SwerveModule m_swerveModule_br = new SwerveModule("br",12,5,6,230.0);
-    public final SwerveModule m_swerveModule_bl = new SwerveModule("bl",13,7,8,187.0);
+    public final SwerveModule m_swerveModule_fr = new SwerveModule("fr",10,1,2,303.0+45);
+    public final SwerveModule m_swerveModule_fl = new SwerveModule("fl",11,3,4,358 + 315);
+    public final SwerveModule m_swerveModule_br = new SwerveModule("br",12,5,6,242.0 + 135);
+    public final SwerveModule m_swerveModule_bl = new SwerveModule("bl",13,7,8,187.0 + 225);
+    //public final SwerveModule m_swerveModule_fr = new SwerveModule("fr",10,1,2,298.0 + 45);
+    //public final SwerveModule m_swerveModule_fl = new SwerveModule("fl",11,3,4,0.0 + 45-90);
+    //public final SwerveModule m_swerveModule_br = new SwerveModule("br",12,5,6,230.0 + 45-180);
+    //public final SwerveModule m_swerveModule_bl = new SwerveModule("bl",13,7,8,187.0+45-270);
+
 
 // Joysticks
 
