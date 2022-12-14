@@ -38,9 +38,9 @@ public class SwerveController extends CommandBase{
 
         super.execute();
 
-        double dx = 0.5*m_x_axis.get();
-        double dy = 0.5*m_y_axis.get();
-        double dr = 0.5*m_r_axis.get();
+        double dx = m_x_axis.get();
+        double dy = m_y_axis.get();
+        double dr = m_r_axis.get();
 
         m_drive.setChassisSpeeds(dx, dy, dr);
         
