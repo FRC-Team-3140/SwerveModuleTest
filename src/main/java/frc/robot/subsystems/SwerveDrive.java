@@ -12,20 +12,39 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class SwerveDrive extends SubsystemBase {
 
-    private final SwerveModule m_swerveModule_fr = new SwerveModule("fr", 10, 1, 2, 303.0 + 45);
-    private final SwerveModule m_swerveModule_fl = new SwerveModule("fl", 11, 3, 4, 358 + 315);
-    private final SwerveModule m_swerveModule_br = new SwerveModule("br", 12, 5, 6, 242.0 + 135);
-    private final SwerveModule m_swerveModule_bl = new SwerveModule("bl", 13, 7, 8, 187.0 + 225);
+    //private final SwerveModule m_swerveModule_fr = new SwerveModule("fr", 10, 1, 2, 303.0 + 45); this angle is 180 out of phase
+    //private final SwerveModule m_swerveModule_fl = new SwerveModule("fl", 11, 3, 4, 358 + 315);
+    //private final SwerveModule m_swerveModule_br = new SwerveModule("br", 12, 5, 6, 242.0 + 135);
+    //private final SwerveModule m_swerveModule_bl = new SwerveModule("bl", 13, 7, 8, 187.0 + 225);
+
+    // All Wheels Reversed
+    //private final SwerveModule m_swerveModule_fr = new SwerveModule("fr", 10, 1, 2, 35.0 + 45);
+    //private final SwerveModule m_swerveModule_fl = new SwerveModule("fl", 11, 3, 4, 359.0 + 315);
+    //private final SwerveModule m_swerveModule_br = new SwerveModule("br", 12, 5, 6, 225.0 + 135);
+    //private final SwerveModule m_swerveModule_bl = new SwerveModule("bl", 13, 7, 8, 187.0 + 225);
+
+    //private final SwerveModule m_swerveModule_fr = new SwerveModule("fr", 10, 1, 2, 215.0 + 45);
+    //private final SwerveModule m_swerveModule_fl = new SwerveModule("fl", 11, 3, 4, 179.0 + 315);
+    //private final SwerveModule m_swerveModule_br = new SwerveModule("br", 12, 5, 6, 45.0 + 135);
+    //private final SwerveModule m_swerveModule_bl = new SwerveModule("bl", 13, 7, 8, 7.0 + 225);
+    private final SwerveModule m_swerveModule_fr = new SwerveModule("fr", 10, 1, 2, 285.0 + 45);
+    private final SwerveModule m_swerveModule_fl = new SwerveModule("fl", 11, 3, 4, 179.0 + 315);
+    private final SwerveModule m_swerveModule_br = new SwerveModule("br", 12, 5, 6, 30.0 + 135);
+    private final SwerveModule m_swerveModule_bl = new SwerveModule("bl", 13, 7, 8, 7.0 + 225);
 
     // Locations for the swerve drive modules relative to the robot center.
     //Translation2d m_frontLeftLocation = new Translation2d(0.381, 0.381);
     //Translation2d m_frontRightLocation = new Translation2d(0.381, -0.381);
     //Translation2d m_backLeftLocation = new Translation2d(-0.381, 0.381);
     //Translation2d m_backRightLocation = new Translation2d(-0.381, -0.381);
-    Translation2d m_frontLeftLocation = new Translation2d(-0.4826, 0.4826);
-    Translation2d m_frontRightLocation = new Translation2d(0.4826, 0.4826);
-    Translation2d m_backLeftLocation = new Translation2d(-0.4826, -0.4826);
-    Translation2d m_backRightLocation = new Translation2d(0.4826, -0.4826);
+    //Translation2d m_frontLeftLocation = new Translation2d(0.4826, 0.4826);
+    //Translation2d m_frontRightLocation = new Translation2d(0.4826, -0.4826);
+    //Translation2d m_backLeftLocation = new Translation2d(-0.4826, 0.4826);
+    //Translation2d m_backRightLocation = new Translation2d(-0.4826, -0.4826);
+    Translation2d m_frontLeftLocation = new Translation2d(0.3683, 0.3683);
+    Translation2d m_frontRightLocation = new Translation2d(0.3683, -0.3683);
+    Translation2d m_backLeftLocation = new Translation2d(-0.3683, 0.3683);
+    Translation2d m_backRightLocation = new Translation2d(-0.3683, -0.3683);
 
     // Creating my kinematics object using the module locations
     SwerveDriveKinematics m_kinematics = new SwerveDriveKinematics(m_frontLeftLocation, m_frontRightLocation,
@@ -51,9 +70,21 @@ public class SwerveDrive extends SubsystemBase {
     }
 
     public void setChassisSpeeds(double x_vel, double y_vel, double r_vel) {
-        x_velocity.setDouble(x_vel);
-        y_velocity.setDouble(y_vel);
-        r_velocity.setDouble(r_vel);
+        if (Math.abs(x_vel) < 0.1) {
+            x_velocity.setDouble(0.0);
+        } else {
+            x_velocity.setDouble(x_vel);
+        }
+        if (Math.abs(y_vel) < 0.1) {
+            y_velocity.setDouble(0.0);
+        } else {
+            y_velocity.setDouble(y_vel);
+        }
+        if (Math.abs(r_vel) < 0.1) {
+            r_velocity.setDouble(0.0);
+        } else {
+            r_velocity.setDouble(r_vel);
+        }
     }
 
     @Override
@@ -82,6 +113,7 @@ public class SwerveDrive extends SubsystemBase {
         // fr_speed.setDouble( states[1].speedMetersPerSecond );
         // bl_speed.setDouble( states[2].speedMetersPerSecond );
         // br_speed.setDouble( states[3].speedMetersPerSecond );
+
         double c3 = startTime;
         double c4 = startTime;
         if (drive_enabled.getBoolean(true)) {
@@ -96,11 +128,11 @@ public class SwerveDrive extends SubsystemBase {
             m_swerveModule_br.setVelocity(states[3].speedMetersPerSecond);
             c3 = System.currentTimeMillis()/1000.0;
 
-            // m_swerveModule_bl.periodic();
-            // m_swerveModule_br.periodic();
+            m_swerveModule_bl.periodic();
+            m_swerveModule_br.periodic();
             c4 = System.currentTimeMillis()/1000.0;
-            // m_swerveModule_fl.periodic();
-            // m_swerveModule_fr.periodic();
+            m_swerveModule_fl.periodic();
+            m_swerveModule_fr.periodic();
         }
         double endTime = System.currentTimeMillis()/1000.0;
         //System.out.printf("SD Periodic: ST=%.3f  ET=%.3f EL=%.3f %.3f %.3f %.3f %.3f\n",startTime,endTime,endTime-startTime,c1-startTime,c2-startTime,c3-startTime,c4-startTime);

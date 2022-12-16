@@ -21,7 +21,7 @@ public class SwerveController extends CommandBase{
 
         m_x_axis = x_axis;
         m_y_axis = y_axis;
-        m_y_axis = r_axis;
+        m_r_axis = r_axis;
 
         addRequirements(m_drive);
     }
