@@ -59,7 +59,7 @@ public class SwerveModule{
     private double base_angle;
 
     private double maxTurnSpeed = 0.3;
-    private double maxDriveSpeed = 0.2;
+    private double maxDriveSpeed = 0.4;
     private double turnIntegratorRange = 0.01;
 
     private boolean enable_turn = true;
